@@ -10,49 +10,17 @@
     </thead>
     <tbody>
       <tr>
-        <td>投稿されるタイトル</td>
-        <td>投稿される本文</td>
-        <td><a class="show" href="#">Show</a></td>
-        <td><a class="edit" href="#">Edit</a></td>
-        <td><a class="destroy" href="#">Destroy</a></td>
-      </tr>
-      
-      <tr>
-        <td>投稿されるタイトル</td>
-        <td>投稿される本文投稿される本文</td>
-        <td><a class="show" href="#">Show</a></td>
-        <td><a class="edit" href="#">Edit</a></td>
-        <td><a class="destroy" href="#">Destroy</a></td>
-      </tr>
-      
-      <tr>
-        <td>投稿されるタイトル</td>
-        <td>投稿される本文</td>
-        <td><a class="show" href="#">Show</a></td>
-        <td><a class="edit" href="#">Edit</a></td>
-        <td><a class="destroy" href="#">Destroy</a></td>
-      </tr>
-      
-      <tr>
-        <td>投稿されるタイトル</td>
-        <td>投稿される本文</td>
-        <td><a class="show" href="#">Show</a></td>
-        <td><a class="edit" href="#">Edit</a></td>
-        <td><a class="destroy" href="#">Destroy</a></td>
       </tr>
     </tbody>
   </table>
   
   <h2>New book</h2>
-  <div class="field">
-    <lavel for="book_title">Title</lavel>
-    <input class="book_title" type="text" name="book[title]" id="book_title">
-  </div>
-  <div class="field">
-    <lavel for="book_title">Body</lavel>
-    <textarea class="book_body" name="book[body]" id="book_body"></textarea>
-  </div>
-  <div class="action">
-    <input type="submit" name="commit" value="Create Book" data-disable-with="Create Book">
-  </div>
+  <!--form_with部分-->
+  <%= form_with model:@book,local:true do |f| %>
+  <p>Title</p>
+  <%= f.text_field :title %>
+  <p>Body</p>
+  <%= f.text_area :body %>
+  <%= f.submit 'Create book' %>
+  <% end %>
 </body>
